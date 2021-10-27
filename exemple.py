@@ -49,9 +49,9 @@ st.plotly_chart(fig5)
 
 st.title("TROUVE TON NUTRISCORE")
 
-uploaded_file = st.file_uploader("Choose a file")
+uploaded_file2 = st.file_uploader("Choose a file")
 if uploaded_file is not None:
-  md = uploaded_file
+  md = uploaded_file2
 
 df_app = pd.DataFrame(index=['0'], columns=['energy_100g','energy-kcal_100g',
                                             'fat_100g','sugars_100g','saturated-fat_100g','salt_100g'])

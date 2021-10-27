@@ -8,16 +8,16 @@ import pickle
 from sklearn.ensemble import RandomForestClassifier
 from PIL import Image
 
-data = pd.read_csv("https://drive.google.com/file/d/1kqJ54-Q8NLWbPnCeiAV67TXZn9B7lkv1/view?usp=sharing", decimal=',')
+df = pd.read_csv("df_deploiement.csv", decimal=',')
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-image = Image.open('http://datamama.fr/nutripred/NP.png')
-st.image(image)
+# image = Image.open('http://datamama.fr/nutripred/NP.png')
+# st.image(image)
 
-uploaded_file = st.file_uploader("Choose a file")
-if uploaded_file is not None:
-  df = pd.read_csv(uploaded_file, sep=",")
-  st.write(df)
+# uploaded_file = st.file_uploader("Choose a file")
+# if uploaded_file is not None:
+#   df = pd.read_csv(uploaded_file, sep=",")
+#   st.write(df)
 
 st.title("Countplot du Nutriscore")
 

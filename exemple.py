@@ -8,7 +8,7 @@ import pickle
 from sklearn.ensemble import RandomForestClassifier
 from PIL import Image
 
-data = pd.read_csv("C:/Users/Utilisateur/Desktop/Alyson/Flasks/Openfood/df_deploiement.csv", decimal=',')
+data = pd.read_csv("https://drive.google.com/file/d/1kqJ54-Q8NLWbPnCeiAV67TXZn9B7lkv1/view?usp=sharing", decimal=',')
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 image = Image.open('C:/Users/Utilisateur/Desktop/Alyson/Flasks/Openfood/NP.png')

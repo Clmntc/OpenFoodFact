@@ -11,8 +11,8 @@ from PIL import Image
 df = pd.read_csv("df_deploiement.csv", decimal=',')
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-# image = Image.open('http://datamama.fr/nutripred/NP.png')
-# st.image(image)
+image = Image.open('NP.png')
+st.image(image)
 
 # uploaded_file = st.file_uploader("Choose a file")
 # if uploaded_file is not None:

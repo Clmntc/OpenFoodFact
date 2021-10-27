@@ -68,9 +68,8 @@ df_app.at['0', 'sugars_100g'] = sugar
 df_app.at['0', 'saturated-fat_100g'] = sat_fat
 df_app.at['0', 'salt_100g'] = salt
 
-
-X_train = df_dep.drop(['nutriscore_grade'], axis=1)
 y_train =df_dep['nutriscore_grade']
+X_train = df_dep.drop(['nutriscore_grade'], axis=1)
 X_test = df_app
 
 model = pickle.load(open("https://drive.google.com/file/d/1Y09vuHQIEutJcKIBzTF6Sg5UZLpq9hPZ/view?usp=sharing","rb"))

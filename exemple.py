@@ -11,7 +11,7 @@ from PIL import Image
 data = pd.read_csv("https://drive.google.com/file/d/1kqJ54-Q8NLWbPnCeiAV67TXZn9B7lkv1/view?usp=sharing", decimal=',')
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-image = Image.open('https://github.com/Clmntc/OpenFoodFact/blob/main/NP.png')
+image = Image.open('https://raw.githubusercontent.com/Clmntc/OpenFoodFact/main/NP.png')
 st.image(image)
 
 uploaded_file = st.file_uploader("Choose a file")

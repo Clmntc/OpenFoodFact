@@ -49,7 +49,7 @@ st.plotly_chart(fig5)
 
 st.title("TROUVE TON NUTRISCORE")
 
-df_dep = pd.read_csv('https://drive.google.com/file/d/1kqJ54-Q8NLWbPnCeiAV67TXZn9B7lkv1/view?usp=sharing')
+df_dep = pd.read_csv('https://drive.google.com/file/d/1kqJ54-Q8NLWbPnCeiAV67TXZn9B7lkv1/view?usp=sharing', decimal=',')
 df_app = pd.DataFrame(index=['0'], columns=['energy_100g','energy-kcal_100g',
                                             'fat_100g','sugars_100g','saturated-fat_100g','salt_100g'])
 

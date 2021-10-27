@@ -11,7 +11,7 @@ from PIL import Image
 data = pd.read_csv("https://drive.google.com/file/d/1kqJ54-Q8NLWbPnCeiAV67TXZn9B7lkv1/view?usp=sharing", decimal=',')
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-image = Image.open('C:/Users/Utilisateur/Desktop/Alyson/Flasks/Openfood/NP.png')
+image = Image.open('https://drive.google.com/file/d/1m9ledmPWCpKOYoDYDXerkekz7haJS302/view?usp=sharing')
 st.image(image)
 
 uploaded_file = st.file_uploader("Choose a file")
@@ -49,7 +49,7 @@ st.plotly_chart(fig5)
 
 st.title("TROUVE TON NUTRISCORE")
 
-df_dep = pd.read_csv('C:/Users/Utilisateur/Desktop/Alyson/Flasks/Openfood/df_deploiement.csv')
+df_dep = pd.read_csv('https://drive.google.com/file/d/1kqJ54-Q8NLWbPnCeiAV67TXZn9B7lkv1/view?usp=sharing')
 df_app = pd.DataFrame(index=['0'], columns=['energy_100g','energy-kcal_100g',
                                             'fat_100g','sugars_100g','saturated-fat_100g','salt_100g'])
 
@@ -73,7 +73,7 @@ X_train = df_dep.drop(['nutriscore_grade'], axis=1)
 y_train =df_dep['nutriscore_grade']
 X_test = df_app
 
-model = pickle.load(open("C:/Users/Utilisateur/Desktop/Alyson/Flasks/Openfood/model.pkl","rb"))
+model = pickle.load(open("https://drive.google.com/file/d/1Y09vuHQIEutJcKIBzTF6Sg5UZLpq9hPZ/view?usp=sharing","rb"))
 
 model = RandomForestClassifier(n_estimators= 100)
 model.fit(X_train, y_train)

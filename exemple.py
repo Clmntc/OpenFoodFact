@@ -49,6 +49,10 @@ st.plotly_chart(fig5)
 
 st.title("TROUVE TON NUTRISCORE")
 
+uploaded_file = st.file_uploader("Choose a file")
+if uploaded_file is not None:
+  md = uploaded_file
+
 df_app = pd.DataFrame(index=['0'], columns=['energy_100g','energy-kcal_100g',
                                             'fat_100g','sugars_100g','saturated-fat_100g','salt_100g'])
 
@@ -69,7 +73,7 @@ df_app.at['0', 'salt_100g'] = salt
 
 X_test = df_app
 
-model = pickle.load(open(./"https://drive.google.com/file/d/1Y09vuHQIEutJcKIBzTF6Sg5UZLpq9hPZ/view?usp=sharing","rb"))
+model = pickle.load(open(md,"rb"))
 
 y_pred = model.predict(X_test)
 def score(x):

@@ -5,7 +5,7 @@ import plotly.express as px
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pickle
-from sklearn import RandomForestClassifier
+from sklearn.ensemble import RandomForestClassifier
 from PIL import Image
 
 data = pd.read_csv("C:/Users/Utilisateur/Desktop/Alyson/Flasks/Openfood/df_deploiement.csv", decimal=',')

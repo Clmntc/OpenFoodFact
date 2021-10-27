@@ -11,7 +11,7 @@ from PIL import Image
 data = pd.read_csv("https://drive.google.com/file/d/1kqJ54-Q8NLWbPnCeiAV67TXZn9B7lkv1/view?usp=sharing", decimal=',')
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-image = Image.open('https://www.grosfichiers.com/qSJVggcFYQh_Y6hmcFywbXZ')
+image = Image.open('https://drive.google.com/file/d/1m9ledmPWCpKOYoDYDXerkekz7haJS302/view')
 st.image(image)
 
 uploaded_file = st.file_uploader("Choose a file")

@@ -8,16 +8,16 @@ import pickle
 from sklearn.ensemble import RandomForestClassifier
 from PIL import Image
 
-df = pd.read_csv("https://drive.google.com/file/d/1kqJ54-Q8NLWbPnCeiAV67TXZn9B7lkv1/view?usp=sharing", decimal=',')
+data = pd.read_csv("https://drive.google.com/file/d/1kqJ54-Q8NLWbPnCeiAV67TXZn9B7lkv1/view?usp=sharing", decimal=',')
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # image = Image.open('https://drive.google.com/file/d/1m9ledmPWCpKOYoDYDXerkekz7haJS302/view?usp=sharing')
 # st.image(image)
 
-# uploaded_file = st.file_uploader("Choose a file")
-# if uploaded_file is not None:
-#   df = pd.read_csv(uploaded_file, sep=",")
-#   st.write(df)
+uploaded_file = st.file_uploader("Choose a file")
+if uploaded_file is not None:
+  df = pd.read_csv(uploaded_file, sep=",")
+  st.write(df)
 
 st.title("Countplot du Nutriscore")
 
@@ -49,7 +49,6 @@ st.plotly_chart(fig5)
 
 st.title("TROUVE TON NUTRISCORE")
 
-df_dep = pd.read_csv('https://drive.google.com/file/d/1kqJ54-Q8NLWbPnCeiAV67TXZn9B7lkv1/view?usp=sharing', decimal=',')
 df_app = pd.DataFrame(index=['0'], columns=['energy_100g','energy-kcal_100g',
                                             'fat_100g','sugars_100g','saturated-fat_100g','salt_100g'])
 
@@ -68,15 +67,11 @@ df_app.at['0', 'sugars_100g'] = sugar
 df_app.at['0', 'saturated-fat_100g'] = sat_fat
 df_app.at['0', 'salt_100g'] = salt
 
-y_train =df_dep['nutriscore_grade']
-X_train = df_dep.drop(['nutriscore_grade'], axis=1)
 X_test = df_app
 
 model = pickle.load(open("https://drive.google.com/file/d/1Y09vuHQIEutJcKIBzTF6Sg5UZLpq9hPZ/view?usp=sharing","rb"))
 
-model = RandomForestClassifier(n_estimators= 100)
-model.fit(X_train, y_train)
-
+y_pred = model.predict(X_test)
 def score(x):
     if x ==5:
         return 'E'

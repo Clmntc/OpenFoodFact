@@ -69,7 +69,7 @@ df_app.at['0', 'salt_100g'] = salt
 
 X_test = df_app
 
-model = pickle.load(open("https://drive.google.com/file/d/1Y09vuHQIEutJcKIBzTF6Sg5UZLpq9hPZ/view?usp=sharing","rb"))
+model = pickle.load(open(./"https://drive.google.com/file/d/1Y09vuHQIEutJcKIBzTF6Sg5UZLpq9hPZ/view?usp=sharing","rb"))
 
 y_pred = model.predict(X_test)
 def score(x):
